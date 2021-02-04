@@ -1169,10 +1169,12 @@ declare namespace Office {
 
        /**
         * Check if the specified requirement set is supported by the host Office application.
+        *
+        * **Warning**: This overload of `isSetSupported` (where `minVersionNumber` is a number) has been deprecated. Use the string overload of `isSetSupported` instead.
+        *
         * @deprecated Use the string overload of `isSetSupported` instead.
         * @param name - The requirement set name (e.g., "ExcelApi").
         * @param minVersionNumber - The minimum required version (e.g., 1.4). 
-        * **Warning**: This overload of `isSetSupported` (where `minVersionNumber` is a number) is deprecated. Use the string overload of `isSetSupported` instead.
         */
        isSetSupported(name: string, minVersionNumber?: number): boolean;
     }
@@ -1218,10 +1220,12 @@ declare namespace Office {
          * Server-side code can use this token to access Microsoft Graph for the add-in's web application by using the
          * {@link https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of | "on behalf of" OAuth flow}.
          *
-         * @deprecated Use Office.auth.getAccessToken instead.
-         * 
          * **Important**: In Outlook, this API is not supported if the add-in is loaded in an Outlook.com or Gmail mailbox.
-         * 
+         *
+         * **Warning**: `getAccessTokenAsync` has been deprecated. Use `Office.auth.getAccessToken` instead.
+         *
+         * @deprecated Use `Office.auth.getAccessToken` instead.
+         *
          * @remarks
          *
          * **Hosts**: Excel, OneNote, Outlook, PowerPoint, Word
@@ -1241,9 +1245,11 @@ declare namespace Office {
          * Server-side code can use this token to access Microsoft Graph for the add-in's web application by using the
          * {@link https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of | "on behalf of" OAuth flow}.
          *
-         * @deprecated Use `Office.auth.getAccessToken` instead.
-         * 
          * **Important**: In Outlook, this API is not supported if the add-in is loaded in an Outlook.com or Gmail mailbox.
+         *
+         * **Warning**: `getAccessTokenAsync` has been deprecated. Use `Office.auth.getAccessToken` instead.
+         *
+         * @deprecated Use `Office.auth.getAccessToken` instead.
          *
          * @remarks
          *
@@ -1298,12 +1304,16 @@ declare namespace Office {
         /**
          * Prompts the user to add their Office account (or to switch to it, if it is already added). Default value is `false`.
          *
+         * **Warning**: `forceAddAccount` has been deprecated. Use `allowSignInPrompt` instead.
+         *
          * @deprecated Use `allowSignInPrompt` instead.
          */
         forceAddAccount?: boolean;
         /**
          * Causes Office to display the add-in consent experience. Useful if the add-in's Azure permissions have changed or if the user's consent has
          * been revoked. Default value is `false`.
+         *
+         * **Warning**: `forceConsent` has been deprecated. Use `allowConsentPrompt` instead.
          *
          * @deprecated Use `allowConsentPrompt` instead.
          */
@@ -1674,7 +1684,9 @@ declare namespace Office {
      */
     interface SaveSettingsOptions {
         /**
-         * Indicates whether the setting will be replaced if stale.
+         * **Warning**: This setting has been deprecated and should not be used. It has no effect on most platforms and will cause errors if set to `false` in Excel on the web.
+         * 
+         * @deprecated `overwriteIfStale` is no longer supported.
          */
         overwriteIfStale?: boolean
         /**
@@ -20803,8 +20815,7 @@ declare namespace Excel {
          */
         getEntireRow(): Excel.Range;
         /**
-         * Renders the range as a base64-encoded png image.
-                    **Important**: This API is currently unsupported in Excel for Mac. Visit {@link https://github.com/OfficeDev/office-js/issues/235 | OfficeDev/office-js Issue #235} for the current status.
+         * Renders the range as a base64-encoded png image. **Important**: This API is currently unsupported in Excel for Mac. Visit {@link https://github.com/OfficeDev/office-js/issues/235 | OfficeDev/office-js Issue #235} for the current status.
          *
          * [Api set: ExcelApi 1.7]
          */
@@ -39829,7 +39840,7 @@ declare namespace Excel {
          */
         linkedDataTypeLinkedDataTypeAdded = "LinkedDataTypeLinkedDataTypeAdded",
         /**
-         * WorksheetFormulaChanged represents the type of event registered on worksheet, and occurs when formula is changed.
+         * WorksheetFormulaChanged represents the type of event registered on worksheet, and occurs when a formula is changed.
          *
          */
         worksheetFormulaChanged = "WorksheetFormulaChanged"
@@ -71024,11 +71035,15 @@ declare namespace Word {
          */
         none = "None",
         /**
-         * @deprecated Hidden is no longer supported.
+         * **Warning**: `hidden` has been deprecated.
+         *
+         * @deprecated `hidden` is no longer supported.
          */
         hidden = "Hidden",
         /**
-         * @deprecated DotLine is no longer supported.
+         * **Warning**: `dotLine` has been deprecated.
+         *
+         * @deprecated `dotLine` is no longer supported.
          */
         dotLine = "DotLine",
         /**
@@ -71098,6 +71113,8 @@ declare namespace Word {
          */
         page = "Page",
         /**
+         * **Warning**: `next` has been deprecated. Use `sectionNext` instead.
+         *
          * @deprecated Use sectionNext instead.
          */
         next = "Next",

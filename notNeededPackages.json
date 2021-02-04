@@ -2152,6 +2152,11 @@
             "asOfVersion": "1.0.0"
         },
         {
+            "libraryName": "json5",
+            "typingsPackageName": "json5",
+            "asOfVersion": "2.2.0"
+        },
+        {
             "libraryName": "jsonata",
             "typingsPackageName": "jsonata",
             "asOfVersion": "1.5.0"
@@ -2747,6 +2752,11 @@
             "asOfVersion": "0.7.2"
         },
         {
+            "libraryName": "multiaddr",
+            "typingsPackageName": "multiaddr",
+            "asOfVersion": "7.4.0"
+        },
+        {
             "libraryName": "multibase",
             "typingsPackageName": "multibase",
             "asOfVersion": "3.1.0"
@@ -2755,11 +2765,6 @@
             "libraryName": "multicodec",
             "typingsPackageName": "multicodec",
             "asOfVersion": "2.1.0"
-        },
-        {
-            "libraryName": "multiaddr",
-            "typingsPackageName": "multiaddr",
-            "asOfVersion": "7.4.0"
         },
         {
             "libraryName": "multimatch",
@@ -4651,6 +4656,11 @@
             "libraryName": "@testing-library/react",
             "typingsPackageName": "testing-library__react",
             "asOfVersion": "10.2.0"
+        },
+        {
+            "libraryName": "@testing-library/react-hooks",
+            "typingsPackageName": "testing-library__react-hooks",
+            "asOfVersion": "4.0.0"
         },
         {
             "libraryName": "@testing-library/user-event",
